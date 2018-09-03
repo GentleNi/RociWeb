@@ -13,10 +13,12 @@ public class ChangeLanguageUtils {
     public static void initLanguage(HttpServletRequest request,HttpSession session){
         //根据http header 确定语言
         if(session.getAttribute("language") == null){
-            if(request.getHeader("Accept-Language").contains("zh-CN")){
+            System.out.println(request.getHeader("Accept-Language"));
+            if(request.getHeader("Accept-Language").contains("zh-CN") || request.getHeader("Accept-Language").contains("zh-cn")){
                 session.setAttribute("language","zh-CN");
             }else{
                 session.setAttribute("language","en");
+
             }
         }
     }
