@@ -202,7 +202,7 @@ ${article.content}
     function loadImg() {
       var h = $('.slides-img > li').eq(0).height()
         if(h < 10) {
-            setTimeout(loadImg, 3000)
+            setTimeout(loadImg, 1000)
         }
         else {
           $('.slides-img').height($('.slides-img > li').eq(0).height())
