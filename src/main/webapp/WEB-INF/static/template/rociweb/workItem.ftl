@@ -199,6 +199,15 @@ ${article.content}
 <script src="${TEMPLATE_BASE_PATH}/scripts/lang.js"></script>
 <script src="${TEMPLATE_BASE_PATH}/scripts/nav.js"></script>
 <script>
+    function loadImg() {
+      var h = $('.slides-img > li').eq(0).height()
+        if(h < 10) {
+            setTimeout(loadImg, 3000)
+        }
+        else {
+          $('.slides-img').height($('.slides-img > li').eq(0).height())
+        }
+    }
     function initScreen() {
         innerHeight = window.innerHeight
         innerWidth = document.body.clientWidth
@@ -214,6 +223,10 @@ ${article.content}
         $('.slides-img > li').width($('.wrapper').width())
         $('.slides-img').width($('.slides-img > li').eq(0).width() * $('.slides-img > li').length)
         $('.slides-img').height($('.slides-img > li').eq(0).height())
+        // setTimeout(function() {
+        //   $('.slides-img').height($('.slides-img > li').eq(0).height())
+        // }, 3000)
+        loadImg()
     }
     $('.slides-img > li').width($('.wrapper').width())
     $('.slides-img').width($('.slides-img > li').eq(0).width() * $('.slides-img > li').length)
