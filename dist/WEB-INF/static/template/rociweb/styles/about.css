@@ -1,0 +1,14 @@
+.wrapper {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+blockquote {
+    border-left: none !important;
+    font-size: 15px;
+}
+
+table{
+    width: auto !important;
+}

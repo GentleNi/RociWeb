@@ -1,0 +1,53 @@
+.top-content {
+    background: #fff;
+}
+.wrapper {
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 150px;
+    width: 72%;
+}
+
+.carousel {
+    margin: 0 15px;
+    margin-top: 120px;
+    margin-bottom: 30px;
+    height: initial;
+    overflow: hidden;
+}
+ .wrapper .info {
+     margin: 0 15px;
+ }
+.slides-img {
+    position: relative;
+}
+
+.slides-img > li {
+    list-style:none;  
+    position: absolute;
+    display: inline-block;
+    /* display: none; */
+    height: initial;
+    /* width: 100%; */
+    margin: 0 auto;
+    /* background-image: url('链接'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slides-img > li > img {
+    height: auto;
+    width: 100%;
+}
+
+@media (max-width: 1600px) {
+    .wrapper{
+        width: 72%;
+    }
+}
+@media (min-width: 1600px) {
+    .wrapper{
+        width: 50%;
+    }
+}

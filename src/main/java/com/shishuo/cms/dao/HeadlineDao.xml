@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shishuo.cms.dao.HeadlineDao">
+  <resultMap id="BaseResultMap" type="com.shishuo.cms.entity.Headline">
+    <constructor>
+      <idArg column="headlineId" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ename" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="picture" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="height" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="width" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="ratio" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="url" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sort" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    headlineId, name, ename, picture, height, width,ratio, url, sort, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from headline
+    where headlineId = #{headlineId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from headline
+    where headlineId = #{headlineId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.shishuo.cms.entity.Headline">
+    insert into headline (headlineId, name, ename, 
+      picture, height, width, ratio,
+      url, sort, createTime
+      )
+    values (#{headlineid,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{ename,jdbcType=VARCHAR}, 
+      #{picture,jdbcType=VARCHAR}, #{height,jdbcType=INTEGER}, #{width,jdbcType=INTEGER}, #{ratio,jdbcType=VARCHAR},
+      #{url,jdbcType=VARCHAR}, #{sort,jdbcType=TINYINT}, #{createtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shishuo.cms.entity.Headline">
+    insert into headline
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="headlineId != null">
+        headlineId,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="ename != null">
+        ename,
+      </if>
+      <if test="picture != null">
+        picture,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="width != null">
+        width,
+      </if>
+      <if test="ratio != null">
+        ratio,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="headlineId != null">
+        #{headlineid,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="ename != null">
+        #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null">
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=INTEGER},
+      </if>
+      <if test="width != null">
+        #{width,jdbcType=INTEGER},
+      </if>
+      <if test="ratio != null">
+        #{ratio,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shishuo.cms.entity.Headline">
+    update headline
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="ename != null">
+        ename = #{ename,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null">
+        picture = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=INTEGER},
+      </if>
+      <if test="width != null">
+        width = #{width,jdbcType=INTEGER},
+      </if>
+      <if test="ratio != null">
+        ratio = #{ratio,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where headlineId = #{headlineid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shishuo.cms.entity.Headline">
+    update headline
+    set name = #{name,jdbcType=VARCHAR},
+      ename = #{ename,jdbcType=VARCHAR},
+      picture = #{picture,jdbcType=VARCHAR},
+      height = #{height,jdbcType=INTEGER},
+      width = #{width,jdbcType=INTEGER},
+      ratio = #{ratio,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=TINYINT},
+      createTime = #{createtime,jdbcType=TIMESTAMP}
+    where headlineId = #{headlineId,jdbcType=BIGINT}
+  </update>
+
+
+  <!-- ############################## -->
+  <!-- ###### 增加 ###### -->
+  <!-- ############################## -->
+
+  <insert id="addHeadline" parameterType="com.shishuo.cms.entity.Headline">
+    insert into
+    headline(name,ename,picture,height,width,ratio,url,sort,createTime)
+    value(#{name},#{ename},#{picture},#{height},#{width},#{ratio},#{url},#{sort},now())
+    <selectKey resultType="long" keyProperty="headlineId">
+      SELECT
+      LAST_INSERT_ID()
+    </selectKey>
+  </insert>
+
+  <!-- ############################## -->
+  <!-- ###### 删除 ###### -->
+  <!-- ############################## -->
+
+  <delete id="deleteHeadline">
+    delete from headline where headlineId=#{headlineId}
+  </delete>
+
+  <!-- ############################## -->
+  <!-- ###### 修改 ###### -->
+  <!-- ############################## -->
+
+  <update id="updateHeadlineById">
+    update headline set name=#{name},ename=#{ename},picture=#{picture},height=#{height},width=#{width},ratio=#{ratio},url=#{url} where headlineId=#{headlineId}
+  </update>
+
+  <update id="updateSortById">
+    update headline set sort=#{sort} where headlineId=#{headlineId}
+  </update>
+
+  <!-- ############################## -->
+  <!-- ###### 查询 ###### -->
+  <!-- ############################## -->
+
+  <select id="getHeadlineList" resultType="com.shishuo.cms.entity.vo.HeadlineVo">
+    select * from headline order by sort
+  </select>
+
+  <select id="getHeadlineById" resultType="com.shishuo.cms.entity.vo.HeadlineVo">
+    select * from headline where headlineId=#{headlineId}
+  </select>
+</mapper>

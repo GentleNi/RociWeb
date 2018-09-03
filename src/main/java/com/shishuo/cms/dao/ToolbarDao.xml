@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shishuo.cms.dao.ToolbarDao">
+  <resultMap id="BaseResultMap" type="com.shishuo.cms.entity.Toolbar">
+    <constructor>
+      <idArg column="adminId" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="topbar" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="footbar" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="t_height" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="t_width" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="f_height" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="f_width" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="t_ratio" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="f_ratio" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    adminId, topbar, footbar, t_height, t_width, f_height, f_width, t_ratio, f_ratio
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from toolbar
+    where adminId = #{adminid,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from toolbar
+    where adminId = #{adminid,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.shishuo.cms.entity.Toolbar">
+    insert into toolbar (adminId, topbar, footbar, 
+      t_height, t_width, f_height, 
+      f_width, t_ratio, f_ratio
+      )
+    values (#{adminid,jdbcType=BIGINT}, #{topbar,jdbcType=VARCHAR}, #{footbar,jdbcType=VARCHAR}, 
+      #{tHeight,jdbcType=INTEGER}, #{tWidth,jdbcType=INTEGER}, #{fHeight,jdbcType=INTEGER}, 
+      #{fWidth,jdbcType=INTEGER}, #{tRatio,jdbcType=VARCHAR}, #{fRatio,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shishuo.cms.entity.Toolbar">
+    insert into toolbar
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="adminid != null">
+        adminId,
+      </if>
+      <if test="topbar != null">
+        topbar,
+      </if>
+      <if test="footbar != null">
+        footbar,
+      </if>
+      <if test="tHeight != null">
+        t_height,
+      </if>
+      <if test="tWidth != null">
+        t_width,
+      </if>
+      <if test="fHeight != null">
+        f_height,
+      </if>
+      <if test="fWidth != null">
+        f_width,
+      </if>
+      <if test="tRatio != null">
+        t_ratio,
+      </if>
+      <if test="fRatio != null">
+        f_ratio,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="adminid != null">
+        #{adminid,jdbcType=BIGINT},
+      </if>
+      <if test="topbar != null">
+        #{topbar,jdbcType=VARCHAR},
+      </if>
+      <if test="footbar != null">
+        #{footbar,jdbcType=VARCHAR},
+      </if>
+      <if test="tHeight != null">
+        #{tHeight,jdbcType=INTEGER},
+      </if>
+      <if test="tWidth != null">
+        #{tWidth,jdbcType=INTEGER},
+      </if>
+      <if test="fHeight != null">
+        #{fHeight,jdbcType=INTEGER},
+      </if>
+      <if test="fWidth != null">
+        #{fWidth,jdbcType=INTEGER},
+      </if>
+      <if test="tRatio != null">
+        #{tRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="fRatio != null">
+        #{fRatio,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shishuo.cms.entity.Toolbar">
+    update toolbar
+    <set>
+      <if test="topbar != null">
+        topbar = #{topbar,jdbcType=VARCHAR},
+      </if>
+      <if test="footbar != null">
+        footbar = #{footbar,jdbcType=VARCHAR},
+      </if>
+      <if test="tHeight != null">
+        t_height = #{tHeight,jdbcType=INTEGER},
+      </if>
+      <if test="tWidth != null">
+        t_width = #{tWidth,jdbcType=INTEGER},
+      </if>
+      <if test="fHeight != null">
+        f_height = #{fHeight,jdbcType=INTEGER},
+      </if>
+      <if test="fWidth != null">
+        f_width = #{fWidth,jdbcType=INTEGER},
+      </if>
+      <if test="tRatio != null">
+        t_ratio = #{tRatio,jdbcType=VARCHAR},
+      </if>
+      <if test="fRatio != null">
+        f_ratio = #{fRatio,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where adminId = #{adminid,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shishuo.cms.entity.Toolbar">
+    update toolbar
+    set topbar = #{topbar,jdbcType=VARCHAR},
+      footbar = #{footbar,jdbcType=VARCHAR},
+      t_height = #{tHeight,jdbcType=INTEGER},
+      t_width = #{tWidth,jdbcType=INTEGER},
+      f_height = #{fHeight,jdbcType=INTEGER},
+      f_width = #{fWidth,jdbcType=INTEGER},
+      t_ratio = #{tRatio,jdbcType=VARCHAR},
+      f_ratio = #{fRatio,jdbcType=VARCHAR}
+    where adminId = #{adminid,jdbcType=BIGINT}
+  </update>
+</mapper>
