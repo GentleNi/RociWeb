@@ -190,7 +190,7 @@
         innerHeight = window.innerHeight
         innerWidth = document.body.clientWidth
         $('.site-title').css('display', 'table-cell')
-        if (innerWidth < 768 & innerHeight > innerWidth) {
+        if (innerWidth < 768 ) {
             $('.mobile-menu').css('display', 'table-cell')
             $('.work-items').css('width', (innerWidth - 2 * 17) + 'px')
             $('.work-item').css('padding', '0px')

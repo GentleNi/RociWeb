@@ -201,7 +201,7 @@
         $('.site-title').css('display', 'table-cell')
         $carouselBox.height(innerHeight - $('.title-nav-wrapper').outerHeight())
 
-        if (innerWidth < 500 & innerHeight > innerWidth) {
+        if (innerWidth < 768) {
             $('.mobile-menu').css('display', 'table-cell')
         } else {
             $('.mobile-menu').css('display', 'none')

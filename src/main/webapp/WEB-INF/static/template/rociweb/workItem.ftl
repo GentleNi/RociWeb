@@ -203,7 +203,7 @@ ${article.content}
         innerHeight = window.innerHeight
         innerWidth = document.body.clientWidth
         $('.site-title').css('display', 'table-cell')
-        if (innerWidth < 768 & innerHeight > innerWidth) {
+        if (innerWidth < 768 ) {
             $('.mobile-menu').css('display', 'table-cell')
             $('.wrapper').width('90%')
         } else {

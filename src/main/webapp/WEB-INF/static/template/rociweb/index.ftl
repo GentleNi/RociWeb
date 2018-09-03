@@ -174,6 +174,9 @@
 
 <script>
     var innerHeight = $(window.top).height()
+    if(innerHeight < 10) {
+      innerHeight = document.body.clientHeight
+    }
     var innerWidth = document.body.clientWidth
     var $carouselBox = $('.carousel'),
             $arrow = $('.arrow');
@@ -191,6 +194,9 @@
 
     var initScreen = function () {
         innerHeight = $(window.top).height()
+        if(innerHeight < 10) {
+          innerHeight = document.body.clientHeight
+        }
         innerWidth = document.body.clientWidth
         $carouselBox.width(innerWidth)
         $arrow.css('padding-top', innerHeight / 2.2 + 'px')
@@ -200,7 +206,7 @@
         $('.slides-img > li').width(innerWidth)
         $('.slides-img').width(innerWidth * $('.slides-img > li').length)
 
-        if (innerWidth < 500 & innerHeight > innerWidth) {
+        if (innerWidth < 768) {
             $('.mobile-menu').css('display', 'table-cell')
         } else {
             $('.mobile-menu').css('display', 'none')
@@ -216,7 +222,7 @@
             $('.slides-img > li').width(innerWidth)
             $('.slides-img').width(innerWidth * $('.slides-img > li').length)
 
-            if (innerWidth < 500 & innerHeight > innerWidth) {
+            if (innerWidth < 768) {
                 $('.mobile-menu').css('display', 'table-cell')
             } else {
                 $('.mobile-menu').css('display', 'none')

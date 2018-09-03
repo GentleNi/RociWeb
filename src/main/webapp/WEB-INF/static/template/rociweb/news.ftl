@@ -53,7 +53,7 @@
                             </li>
                             <li class="page-collection">
                                 <span class="lang-span">
-                                    <a href="${BASE_PATH}/article/change_lan/news"><i class="iconfont lang lang-flag zh">&#xe7a0;</i></a>
+                                    <a href="${BASE_PATH}/article/change_lan/news"><i class="iconfont lang lang-flag zh ">&#xe7a0;</i></a>
                                     <i class="iconfont" style="font-size:1.5em;color:#fff;margin: 0 -8px;">&#xe610;</i>
                                     <a href="${BASE_PATH}/article/change_lan/news"><i class="iconfont lang lang-flag en">&#xe79c;</i></a>
                                 </span>
@@ -189,7 +189,7 @@
             innerHeight = window.innerHeight
             innerWidth = document.body.clientWidth
             $('.site-title').css('display', 'table-cell')
-            if (innerWidth < 768 & innerHeight > innerWidth) {
+            if (innerWidth < 768) {
                 $('.mobile-menu').css('display', 'table-cell')
                 $('.wrapper').width('90%')
             } else if (innerWidth < 1600){
