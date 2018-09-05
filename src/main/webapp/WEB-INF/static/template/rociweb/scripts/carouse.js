@@ -1,4 +1,4 @@
-$(() => {
+$(function() {
     var $carouselBox = $('.carousel'),
             $slidesUl = $('.slides-img'),
             $slidesLi = $('.slides-img > li'),
@@ -33,7 +33,7 @@ $(() => {
     function move(pos) {
         if (!$lock) return
         $lock = false
-        setTimeout(() => {
+        setTimeout(function() {
             $lock = true
         }, 1000)
         if ($index == 0) {
@@ -68,7 +68,8 @@ $(() => {
         pos > 0 ? $index -- : $index ++
     }
 
-    function play($idx = 0) {
+    function play() {
+        $idx=0;       
         if (!$lock) return;
         $lock = false;
         $slidesLi.eq($index).slideUp(1500);

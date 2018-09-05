@@ -192,12 +192,12 @@
             if (innerWidth < 768) {
                 $('.mobile-menu').css('display', 'table-cell')
                 $('.wrapper').width('90%')
-            } else if (innerWidth < 1600){
-                $('.mobile-menu').css('display', 'none')
-                $('.wrapper').width('72%')
+            // } else if (innerWidth < 1600){
+            //     $('.mobile-menu').css('display', 'none')
+            //     $('.wrapper').width('72%')
             } else {
                 $('.mobile-menu').css('display', 'none')
-                $('.wrapper').width('50%')
+                $('.wrapper').width('72%')
             }
         }
         initScreen()

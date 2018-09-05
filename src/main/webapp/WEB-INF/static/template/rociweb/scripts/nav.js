@@ -1,4 +1,4 @@
-$(()=>{
+$(function(){
     region = function(x_r, r1, r2){
         /*
         x_r: 背景图片中心位置比例
@@ -36,11 +36,11 @@ $(()=>{
         
     })
 
-    $('#footer a').bind('mouseenter', () => {
+    $('#footer a').bind('mouseenter', function() {
         $('#footer a').css('opacity', 0.6)
     })
 
-    $('#footer a').bind('mouseleave', () => {
+    $('#footer a').bind('mouseleave', function() {
         $('#footer a').css('opacity', 1)
     })
 })

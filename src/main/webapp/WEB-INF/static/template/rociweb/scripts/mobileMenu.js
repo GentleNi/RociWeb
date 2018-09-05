@@ -1,4 +1,4 @@
-$(() => {
+$(function() {
     var $mobileMenu = $('.mobile-menu>i:last')
     var mobileMenuBar = function () {
         $('.top-content').stop(true, false).animate({

@@ -200,12 +200,12 @@ ${article.content}
 <script src="${TEMPLATE_BASE_PATH}/scripts/nav.js"></script>
 <script>
     function loadImg() {
-      var h = $('.slides-img > li').eq(0).height()
+      var h = $('.slides-img > li > img').eq(0).height()
         if(h < 10) {
             setTimeout(loadImg, 1000)
         }
         else {
-          $('.slides-img').height($('.slides-img > li').eq(0).height())
+          $('.slides-img').height($('.slides-img > li > img').eq(0).height())
         }
     }
     function initScreen() {
@@ -221,15 +221,15 @@ ${article.content}
         }
         $('.wrapper').width($('.wrapper').width() - 30)
         $('.slides-img > li').width($('.wrapper').width())
-        $('.slides-img').width($('.slides-img > li').eq(0).width() * $('.slides-img > li').length)
-        $('.slides-img').height($('.slides-img > li').eq(0).height())
+        $('.slides-img').width($('.slides-img > li > img').eq(0).width() * $('.slides-img > li').length)
+        $('.slides-img').height($('.slides-img > li > img').eq(0).height())
         // setTimeout(function() {
         //   $('.slides-img').height($('.slides-img > li').eq(0).height())
         // }, 3000)
         loadImg()
     }
     $('.slides-img > li').width($('.wrapper').width())
-    $('.slides-img').width($('.slides-img > li').eq(0).width() * $('.slides-img > li').length)
+    $('.slides-img').width($('.slides-img > li > img').eq(0).width() * $('.slides-img > li').length)
     initScreen()
     // window.onresize = initScreen
     // document.body.onresize= initScreen
