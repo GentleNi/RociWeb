@@ -199,6 +199,10 @@
             $('.work-items').css('width', '72%')
             $('.work-item').css('padding', '')
         }
+        $('.image-caption-wrapper').css('bottom', Math.abs($('.work-item-content').innerHeight() - $('.work-item-content img').innerHeight()) + $('.image-caption-wrapper').innerHeight())
+        workItemmargin = $('.work-item').css('padding-left').slice(0,-2) * 2
+        $('.work-item').css('margin-top', -($('.work-item').innerHeight() - Math.min($('.work-item  img').innerHeight(),$('.work-item-content').innerHeight() ) - workItemmargin))
+
     }
     initScreen()
     // window.onresize = initScreen
