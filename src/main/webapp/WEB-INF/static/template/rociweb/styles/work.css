@@ -57,7 +57,7 @@
 }
 @media (min-width: 1600px) {
     .work-items{
-        width: 50%;
+        /* width: 50%; */
     }
 }
 /* @media (min-width: 1600px) {

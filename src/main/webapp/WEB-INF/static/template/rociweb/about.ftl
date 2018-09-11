@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${TEMPLATE_BASE_PATH}/styles/about.css">
     <style>
         .wrapper {
-            width: 50%;
+            /*width: 50%;*/
             margin-left: auto;
             margin-right: auto;
             padding: 0 15px;
